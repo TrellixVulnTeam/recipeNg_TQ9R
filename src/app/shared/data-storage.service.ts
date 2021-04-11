@@ -13,7 +13,7 @@ export class DataStorageService {
         const recipes = this.recipeService.getRecipes();
         this.http
             .put(
-                'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json',
+                'https://ng-recipe-app-12970-default-rtdb.europe-west1.firebasedatabase.app/recipes.json',
                 recipes
             )
             .subscribe(response => {
@@ -38,6 +38,6 @@ export class DataStorageService {
                 tap(recipes => {
                     this.recipeService.setRecipes(recipes);
                 })
-            )
+            );
     }
 }
